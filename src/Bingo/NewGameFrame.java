@@ -370,7 +370,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Enter A Number");
 
-        BLabel.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        BLabel.setFont(new java.awt.Font("MV Boli", 1, 48)); // NOI18N
         BLabel.setForeground(new java.awt.Color(255, 51, 153));
         BLabel.setPreferredSize(new java.awt.Dimension(60, 60));
 
@@ -2296,8 +2296,7 @@ public class NewGameFrame extends javax.swing.JFrame {
 
     private void PauseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PauseButtonActionPerformed
         // TODO add your handling code here:
-        new NewGameFrame().setVisible(false);
-        new FirstFrame().setVisible(true);
+       new FirstFrame().setVisible(true);
     }//GEN-LAST:event_PauseButtonActionPerformed
 
     /**

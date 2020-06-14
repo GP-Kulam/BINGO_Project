@@ -195,6 +195,7 @@ public class FirstFrame extends javax.swing.JFrame {
         dispose();
         
         
+        
     }//GEN-LAST:event_ResumeButtonActionPerformed
 
     private void HelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpButtonActionPerformed
