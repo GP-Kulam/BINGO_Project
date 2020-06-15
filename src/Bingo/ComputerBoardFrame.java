@@ -7,32 +7,19 @@ package Bingo;
 
 import java.awt.Color;
 import java.util.Random;
-import Bingo.*;
+
 
 /**
  *
- * @author GP Kulam
+ * @author GP Kualm
  */
-public class NewGameFrame extends javax.swing.JFrame {
+public class ComputerBoardFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewGameFrame
+     * Creates new form ComputerBoardFrame
      */
-    
-    //data Members used
-    int Entry;
-    //A stack that stores the distinct random numbers
-    int stack[] = new int[25];
-    int top = 0;
-    //a 2D array for storing the values on all buttons in order
-    int ButtonArray[][] = new int[5][5];
-    int x; //stores the random number generated in function giverandom()
-    int BingoCount = 0; //winner decider variable
-    ComputerBoardFrame c1 = new ComputerBoardFrame(); 
-    public NewGameFrame() {
+    public ComputerBoardFrame() {
         initComponents();
-        PauseButton.setVisible(false);
-        Opponent.setVisible(false);
     }
 
     /**
@@ -71,22 +58,18 @@ public class NewGameFrame extends javax.swing.JFrame {
         B23 = new javax.swing.JButton();
         B24 = new javax.swing.JButton();
         B25 = new javax.swing.JButton();
-        FillTableButton = new javax.swing.JButton();
-        EnterValueButton = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        BLabel = new javax.swing.JLabel();
         ILabel = new javax.swing.JLabel();
+        BLabel = new javax.swing.JLabel();
         NLabel = new javax.swing.JLabel();
         OLabel = new javax.swing.JLabel();
         GLabel = new javax.swing.JLabel();
-        PauseButton = new javax.swing.JButton();
-        Opponent = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("NewGame");
+        setTitle("Computer");
+        setType(java.awt.Window.Type.POPUP);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setForeground(new java.awt.Color(51, 255, 0));
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setName("GameBoard"); // NOI18N
@@ -341,44 +324,13 @@ public class NewGameFrame extends javax.swing.JFrame {
                     .addComponent(B25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        FillTableButton.setBackground(new java.awt.Color(204, 0, 102));
-        FillTableButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        FillTableButton.setForeground(new java.awt.Color(255, 255, 255));
-        FillTableButton.setText("Fill Table");
-        FillTableButton.setActionCommand("FillTablle");
-        FillTableButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        FillTableButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FillTableButtonActionPerformed(evt);
-            }
-        });
-
-        EnterValueButton.setBackground(new java.awt.Color(0, 51, 153));
-        EnterValueButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        EnterValueButton.setForeground(new java.awt.Color(255, 255, 255));
-        EnterValueButton.setText("Enter");
-        EnterValueButton.setActionCommand("EnterValue");
-        EnterValueButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EnterValueButtonActionPerformed(evt);
-            }
-        });
-
-        jTextField1.setBackground(new java.awt.Color(102, 102, 102));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Enter A Number");
+        ILabel.setFont(new java.awt.Font("MV Boli", 1, 48)); // NOI18N
+        ILabel.setForeground(new java.awt.Color(255, 204, 0));
+        ILabel.setPreferredSize(new java.awt.Dimension(60, 60));
 
         BLabel.setFont(new java.awt.Font("MV Boli", 1, 48)); // NOI18N
         BLabel.setForeground(new java.awt.Color(255, 51, 153));
         BLabel.setPreferredSize(new java.awt.Dimension(60, 60));
-
-        ILabel.setFont(new java.awt.Font("MV Boli", 1, 48)); // NOI18N
-        ILabel.setForeground(new java.awt.Color(255, 204, 0));
-        ILabel.setPreferredSize(new java.awt.Dimension(60, 60));
 
         NLabel.setFont(new java.awt.Font("MV Boli", 1, 48)); // NOI18N
         NLabel.setForeground(new java.awt.Color(0, 255, 0));
@@ -392,89 +344,48 @@ public class NewGameFrame extends javax.swing.JFrame {
         GLabel.setForeground(new java.awt.Color(51, 0, 204));
         GLabel.setPreferredSize(new java.awt.Dimension(60, 60));
 
-        PauseButton.setBackground(new java.awt.Color(0, 204, 51));
-        PauseButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        PauseButton.setForeground(new java.awt.Color(255, 255, 255));
-        PauseButton.setText("Pause");
-        PauseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PauseButtonActionPerformed(evt);
-            }
-        });
-
-        Opponent.setBackground(new java.awt.Color(255, 51, 51));
-        Opponent.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Opponent.setForeground(new java.awt.Color(255, 255, 255));
-        Opponent.setText("Look Opponents Board");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(159, 159, 159)
                         .addComponent(BLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ILabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(NLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(GLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(OLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FillTableButton)
-                    .addComponent(jLabel1)
-                    .addComponent(PauseButton)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Opponent)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(EnterValueButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(62, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(OLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(161, 161, 161)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ILabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(FillTableButton)
-                        .addGap(2, 2, 2)
-                        .addComponent(PauseButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(EnterValueButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(Opponent, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(170, Short.MAX_VALUE))
+                    .addComponent(NLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(OLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -483,6 +394,19 @@ public class NewGameFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    int stack[] = new int[25];
+    int top = 0;
+    //a 2D array for storing the values on all buttons in order
+    int ButtonArray[][] = new int[5][5];
+    int x; //stores the random number generated in function giverandom()
+    int BingoCount = 0; //winner decider variable
+    
+    
     
     public void push(int x)
     {
@@ -533,11 +457,11 @@ public class NewGameFrame extends javax.swing.JFrame {
             System.out.println();
         }
     }
-    private void FillTableButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FillTableButtonActionPerformed
-        // TODO add your handling code here:
+    
+    
+    public void Labeling()
+    {
         
-        FillTableButton.setVisible(false);// after clicking the button this button will disappear
-        PauseButton.setVisible(true); //
         stack[0] = 0;
         B1.setLabel(""+giveRandom());
         B2.setLabel(""+giveRandom());
@@ -571,17 +495,8 @@ public class NewGameFrame extends javax.swing.JFrame {
         {
             pop();
         }
-        
-        c1.Labeling();
-        c1.StoreValuesInarray();
-        
-            
-        
-        
-        
-    }//GEN-LAST:event_FillTableButtonActionPerformed
-    
-    public void EnterNumberInGame()
+    }
+    public int EnterNumberInGame(int Entry)
     {
         for(int i=0; i<5; i++)
          {
@@ -690,8 +605,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
                 
             }
                      
@@ -752,8 +666,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B2
@@ -811,9 +724,12 @@ public class NewGameFrame extends javax.swing.JFrame {
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
                      
@@ -876,8 +792,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B4
@@ -953,8 +868,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B5
@@ -1013,8 +927,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B6
@@ -1087,8 +1000,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B7
@@ -1148,8 +1060,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+               
             }
                      
         }//end of if cobdtion for B8
@@ -1224,8 +1135,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B9
@@ -1285,8 +1195,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B10
@@ -1346,8 +1255,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B11
@@ -1408,8 +1316,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B12
@@ -1499,8 +1406,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B13
@@ -1561,8 +1467,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B14
@@ -1623,8 +1528,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B15
@@ -1685,8 +1589,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+               
             }
                      
         }//end of if cobdtion for B16
@@ -1763,8 +1666,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B17
@@ -1824,8 +1726,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
             
                      
@@ -1899,9 +1800,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             }
             else
             {
-                OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B19
@@ -1963,8 +1862,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B20
@@ -2042,8 +1940,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+               
             }
                      
         }//end of if cobdtion for B21             
@@ -2104,8 +2001,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B22
@@ -2166,8 +2062,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B23
@@ -2228,8 +2123,7 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B24
@@ -2303,47 +2197,17 @@ public class NewGameFrame extends javax.swing.JFrame {
             else
             {
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
+                
             }
                      
         }//end of if cobdtion for B25
+        return BingoCount;
     }
-    int w;
-    private void EnterValueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterValueButtonActionPerformed
-        // TODO add your handling code here:
-        //the code that will do a action after clicking the enter
-         
-         Entry = Integer.parseInt(jTextField1.getText());
-         push(Entry);
-         c1.push(Entry);
-         w = c1.EnterNumberInGame(Entry);
-         jTextField1.setText(null);
-         EnterNumberInGame();
-         Entry = giveRandom();
-         push(Entry);
-         c1.push(Entry);
-         w = c1.EnterNumberInGame(Entry);
-         EnterNumberInGame();
-         if(w>=5)
-         {
-            new ComputerWon().setVisible(true); 
-            
-             
-         }
-         
-        
-        
-    }//GEN-LAST:event_EnterValueButtonActionPerformed
-
-    private void PauseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PauseButtonActionPerformed
-        // TODO add your handling code here:
-       new FirstFrame().setVisible(true);
-    }//GEN-LAST:event_PauseButtonActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2358,20 +2222,20 @@ public class NewGameFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewGameFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ComputerBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewGameFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ComputerBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewGameFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ComputerBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewGameFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ComputerBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewGameFrame().setVisible(true);
+                new ComputerBoardFrame().setVisible(true);
             }
         });
     }
@@ -2403,17 +2267,11 @@ public class NewGameFrame extends javax.swing.JFrame {
     private javax.swing.JButton B8;
     private javax.swing.JButton B9;
     private javax.swing.JLabel BLabel;
-    private javax.swing.JButton EnterValueButton;
-    private javax.swing.JButton FillTableButton;
     private javax.swing.JLabel GLabel;
     private javax.swing.JLabel ILabel;
     private javax.swing.JLabel NLabel;
     private javax.swing.JLabel OLabel;
-    private javax.swing.JButton Opponent;
-    private javax.swing.JButton PauseButton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

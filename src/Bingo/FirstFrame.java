@@ -9,7 +9,7 @@ import static javafx.application.Platform.exit;
 
 /**
  *
- * @author GP Kualm
+ * @author GP Kulam
  */
 public class FirstFrame extends javax.swing.JFrame {
 

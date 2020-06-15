@@ -7,7 +7,7 @@ package Bingo;
 
 /**
  *
- * @author GP Kualm
+ * @author GP Kulam
  */
 public class AboutFrame extends javax.swing.JFrame {
 
