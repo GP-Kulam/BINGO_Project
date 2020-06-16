@@ -29,6 +29,7 @@ public class NewGameFrame extends javax.swing.JFrame {
     int x; //stores the random number generated in function giverandom()
     int BingoCount = 0; //winner decider variable
     ComputerBoardFrame c1 = new ComputerBoardFrame(); 
+    Computer c =  new Computer();
     public NewGameFrame() {
         initComponents();
         PauseButton.setVisible(false);
@@ -82,6 +83,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         GLabel = new javax.swing.JLabel();
         PauseButton = new javax.swing.JButton();
         Opponent = new javax.swing.JButton();
+        Retry = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NewGame");
@@ -407,6 +409,9 @@ public class NewGameFrame extends javax.swing.JFrame {
         Opponent.setForeground(new java.awt.Color(255, 255, 255));
         Opponent.setText("Look Opponents Board");
 
+        Retry.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Retry.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -432,11 +437,14 @@ public class NewGameFrame extends javax.swing.JFrame {
                     .addComponent(PauseButton)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Opponent)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(EnterValueButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(EnterValueButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Retry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -458,7 +466,9 @@ public class NewGameFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Retry, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(EnterValueButton)
                         .addGap(18, 18, 18)
@@ -575,13 +585,12 @@ public class NewGameFrame extends javax.swing.JFrame {
         c1.Labeling();
         c1.StoreValuesInarray();
         
-            
         
         
         
     }//GEN-LAST:event_FillTableButtonActionPerformed
     
-    public void EnterNumberInGame()
+    public int EnterNumberInGame()
     {
         for(int i=0; i<5; i++)
          {
@@ -591,14 +600,7 @@ public class NewGameFrame extends javax.swing.JFrame {
                      ButtonArray[i][j] =0;
              }
          }//end of for
-         /*for(int i=0; i<5; i++)
-         {
-             for(int j=0; j<5; j++)
-             {
-                 System.out.print("   "+ButtonArray[i][j]);
-             }
-             System.out.println();
-         }//end of for*/
+         
          for(int i=0; i<5; i++)
          {
              for(int j=0; j<5; j++)
@@ -607,19 +609,12 @@ public class NewGameFrame extends javax.swing.JFrame {
                      ButtonArray[i][j] =0;
              }
          }//end of for
-         /*for(int i=0; i<5; i++)
-         {
-             for(int j=0; j<5; j++)
-             {
-                 System.out.print("   "+ButtonArray[i][j]);
-             }
-             System.out.println();
-         }//end of for*/
+         
          // the code which helps to change the lable for the Button for the which the entry has done
         int EqualityRCount = 0; 
         int EqualityCCount = 0;
         int EqualityDCount = 0;
-        
+        Retry.setText("");
         /**
          * Button B1 
          */
@@ -678,20 +673,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
                 
             }
                      
@@ -700,7 +703,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B2 
          */
-        if(Entry == Integer.parseInt(B2.getLabel()))
+        else if(Entry == Integer.parseInt(B2.getLabel()))
         {
             
             B2.setBackground(Color.darkGray); //It will change the color of the button
@@ -740,20 +743,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B2
@@ -761,7 +772,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B3 
          */
-        if(Entry == Integer.parseInt(B3.getLabel()))
+        else if(Entry == Integer.parseInt(B3.getLabel()))
         {
             
             B3.setBackground(Color.darkGray); //It will change the color of the button
@@ -800,20 +811,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
                      
@@ -822,7 +841,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B4 
          */
-        if(Entry == Integer.parseInt(B4.getLabel()))
+        else if(Entry == Integer.parseInt(B4.getLabel()))
         {
             
             B4.setBackground(Color.darkGray); //It will change the color of the button
@@ -864,20 +883,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B4
@@ -886,7 +913,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B5 
          */
-        if(Entry == Integer.parseInt(B5.getLabel()))
+        else if(Entry == Integer.parseInt(B5.getLabel()))
         {
             
             B5.setBackground(Color.darkGray); //It will change the color of the button
@@ -941,20 +968,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B5
@@ -962,7 +997,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B6 
          */
-        if(Entry == Integer.parseInt(B6.getLabel()))
+        else if(Entry == Integer.parseInt(B6.getLabel()))
         {
             
             B6.setBackground(Color.darkGray); //It will change the color of the button
@@ -1001,20 +1036,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B6
@@ -1022,7 +1065,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B7 
          */
-        if(Entry == Integer.parseInt(B7.getLabel()))
+        else if(Entry == Integer.parseInt(B7.getLabel()))
         {
             
             B7.setBackground(Color.darkGray); //It will change the color of the button
@@ -1075,20 +1118,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B7
@@ -1096,7 +1147,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B8 
          */
-        if(Entry == Integer.parseInt(B8.getLabel()))
+        else if(Entry == Integer.parseInt(B8.getLabel()))
         {
             
             B8.setBackground(Color.darkGray); //It will change the color of the button
@@ -1136,20 +1187,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B8
@@ -1157,7 +1216,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B9 
          */
-        if(Entry == Integer.parseInt(B9.getLabel()))
+        else if(Entry == Integer.parseInt(B9.getLabel()))
         {
             
             B9.setBackground(Color.darkGray); //It will change the color of the button
@@ -1212,20 +1271,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B9
@@ -1233,7 +1300,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B10 
          */
-        if(Entry == Integer.parseInt(B10.getLabel()))
+        else if(Entry == Integer.parseInt(B10.getLabel()))
         {
             
             B10.setBackground(Color.darkGray); //It will change the color of the button
@@ -1273,20 +1340,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B10
@@ -1294,7 +1369,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B11 
          */
-        if(Entry == Integer.parseInt(B11.getLabel()))
+        else if(Entry == Integer.parseInt(B11.getLabel()))
         {
             
             B11.setBackground(Color.darkGray); //It will change the color of the button
@@ -1334,20 +1409,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B11
@@ -1356,7 +1439,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B12 
          */
-        if(Entry == Integer.parseInt(B12.getLabel()))
+        else if(Entry == Integer.parseInt(B12.getLabel()))
         {
             
             B12.setBackground(Color.darkGray); //It will change the color of the button
@@ -1396,20 +1479,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B12
@@ -1418,7 +1509,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B13 
          */
-        if(Entry == Integer.parseInt(B13.getLabel()))
+        else if(Entry == Integer.parseInt(B13.getLabel()))
         {
             
             B13.setBackground(Color.darkGray); //It will change the color of the button
@@ -1487,20 +1578,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B13
@@ -1509,7 +1608,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B14 
          */
-        if(Entry == Integer.parseInt(B14.getLabel()))
+        else if(Entry == Integer.parseInt(B14.getLabel()))
         {
             
             B14.setBackground(Color.darkGray); //It will change the color of the button
@@ -1549,20 +1648,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B14
@@ -1571,7 +1678,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B15 
          */
-        if(Entry == Integer.parseInt(B15.getLabel()))
+        else if(Entry == Integer.parseInt(B15.getLabel()))
         {
             
             B15.setBackground(Color.darkGray); //It will change the color of the button
@@ -1611,20 +1718,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B15
@@ -1633,7 +1748,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B16 
          */
-        if(Entry == Integer.parseInt(B16.getLabel()))
+        else if(Entry == Integer.parseInt(B16.getLabel()))
         {
             
             B16.setBackground(Color.darkGray); //It will change the color of the button
@@ -1673,20 +1788,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B16
@@ -1695,7 +1818,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B17 
          */
-        if(Entry == Integer.parseInt(B17.getLabel()))
+        else if(Entry == Integer.parseInt(B17.getLabel()))
         {
             
             B17.setBackground(Color.darkGray); //It will change the color of the button
@@ -1749,22 +1872,30 @@ public class NewGameFrame extends javax.swing.JFrame {
             {
                 switch(BingoCount)
                 {
-                    case 1: BLabel.setText("B");
+                   case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B17
@@ -1773,7 +1904,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B18 
          */
-        if(Entry == Integer.parseInt(B18.getLabel()))
+        else if(Entry == Integer.parseInt(B18.getLabel()))
         {
             
             B18.setBackground(Color.darkGray); //It will change the color of the button
@@ -1812,20 +1943,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
             
                      
@@ -1835,7 +1974,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B19 
          */
-        if(Entry == Integer.parseInt(B19.getLabel()))
+        else if(Entry == Integer.parseInt(B19.getLabel()))
         {
             
             B19.setBackground(Color.darkGray); //It will change the color of the button
@@ -1888,20 +2027,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B19
@@ -1911,7 +2058,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B20 
          */
-        if(Entry == Integer.parseInt(B20.getLabel()))
+        else if(Entry == Integer.parseInt(B20.getLabel()))
         {
             
             B20.setBackground(Color.darkGray); //It will change the color of the button
@@ -1951,20 +2098,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B20
@@ -1973,7 +2128,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B21 
          */
-        if(Entry == Integer.parseInt(B21.getLabel()))
+        else if(Entry == Integer.parseInt(B21.getLabel()))
         {
             
             B21.setBackground(Color.darkGray); //It will change the color of the button
@@ -2030,20 +2185,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B21             
@@ -2052,7 +2215,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B22 
          */
-        if(Entry == Integer.parseInt(B22.getLabel()))
+        else if(Entry == Integer.parseInt(B22.getLabel()))
         {
             
             B22.setBackground(Color.darkGray); //It will change the color of the button
@@ -2092,20 +2255,27 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
-                        
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B22
@@ -2114,7 +2284,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B23 
          */
-        if(Entry == Integer.parseInt(B23.getLabel()))
+        else if(Entry == Integer.parseInt(B23.getLabel()))
         {
             
             B23.setBackground(Color.darkGray); //It will change the color of the button
@@ -2152,22 +2322,30 @@ public class NewGameFrame extends javax.swing.JFrame {
             {
                 switch(BingoCount)
                 {
-                    case 1: BLabel.setText("B");
+                   case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B23
@@ -2176,7 +2354,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B24 
          */
-        if(Entry == Integer.parseInt(B24.getLabel()))
+        else if(Entry == Integer.parseInt(B24.getLabel()))
         {
             
             B24.setBackground(Color.darkGray); //It will change the color of the button
@@ -2216,20 +2394,28 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+               BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B24
@@ -2238,7 +2424,7 @@ public class NewGameFrame extends javax.swing.JFrame {
         /**
          * Button B25 
          */
-        if(Entry == Integer.parseInt(B25.getLabel()))
+        else if(Entry == Integer.parseInt(B25.getLabel()))
         {
             
             B25.setBackground(Color.darkGray); //It will change the color of the button
@@ -2291,45 +2477,96 @@ public class NewGameFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                new NewGameFrame().setVisible(false);
-                new WinnerAnnouncedHere().setVisible(true);
             }
                      
         }//end of if cobdtion for B25
+        else
+        {
+            Retry.setText("Retry");
+        }
+        return BingoCount;
     }
-    int w;
+    public int isEntry(int Entry)
+    {
+        for(int i=0; i<top; i++)
+        {
+            if(Entry == stack[i])
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+    int w,z;
     private void EnterValueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterValueButtonActionPerformed
         // TODO add your handling code here:
         //the code that will do a action after clicking the enter
-         
+         Retry.setText("");
          Entry = Integer.parseInt(jTextField1.getText());
+         if(isEntry(Entry)==1)
+         {
+             Retry.setText("Re enter");
+             jTextField1.setText(null);
+             return;
+         }
          push(Entry);
          c1.push(Entry);
          w = c1.EnterNumberInGame(Entry);
+         if(Entry>25 || Entry<=0)
+         {
+              Retry.setText("Retry");
+              jTextField1.setText("");
+              return;
+         }
          jTextField1.setText(null);
-         EnterNumberInGame();
+         z = EnterNumberInGame();
          Entry = giveRandom();
          push(Entry);
          c1.push(Entry);
          w = c1.EnterNumberInGame(Entry);
-         EnterNumberInGame();
-         if(w>=5)
+         z = EnterNumberInGame();
+         
+         
+         if(w>=5 && z>=5 )
          {
-            new ComputerWon().setVisible(true); 
+             System.out.println("It's a tie");
+             c1.setVisible(true);
+             new Tie().setVisible(true);
+             
+         }
+         else if(w>=5)
+         {
+             c1.setVisible(true);
+             new ComputerWon().setVisible(true);
+            
             
              
+         }
+         else if(z>=5)
+         {
+             new WinnerAnnouncedHere().setVisible(true);
          }
          
         
@@ -2411,6 +2648,7 @@ public class NewGameFrame extends javax.swing.JFrame {
     private javax.swing.JLabel OLabel;
     private javax.swing.JButton Opponent;
     private javax.swing.JButton PauseButton;
+    private javax.swing.JLabel Retry;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

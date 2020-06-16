@@ -506,14 +506,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                      ButtonArray[i][j] =0;
              }
          }//end of for
-         /*for(int i=0; i<5; i++)
-         {
-             for(int j=0; j<5; j++)
-             {
-                 System.out.print("   "+ButtonArray[i][j]);
-             }
-             System.out.println();
-         }//end of for*/
+         
          for(int i=0; i<5; i++)
          {
              for(int j=0; j<5; j++)
@@ -522,14 +515,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                      ButtonArray[i][j] =0;
              }
          }//end of for
-         /*for(int i=0; i<5; i++)
-         {
-             for(int j=0; j<5; j++)
-             {
-                 System.out.print("   "+ButtonArray[i][j]);
-             }
-             System.out.println();
-         }//end of for*/
+         
          // the code which helps to change the lable for the Button for the which the entry has done
         int EqualityRCount = 0; 
         int EqualityCCount = 0;
@@ -593,19 +579,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
                 
             }
                      
@@ -614,7 +609,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B2 
          */
-        if(Entry == Integer.parseInt(B2.getLabel()))
+        else if(Entry == Integer.parseInt(B2.getLabel()))
         {
             
             B2.setBackground(Color.darkGray); //It will change the color of the button
@@ -654,19 +649,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B2
@@ -674,7 +678,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B3 
          */
-        if(Entry == Integer.parseInt(B3.getLabel()))
+        else if(Entry == Integer.parseInt(B3.getLabel()))
         {
             
             B3.setBackground(Color.darkGray); //It will change the color of the button
@@ -713,11 +717,17 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
@@ -729,7 +739,6 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 NLabel.setText("N");
                 GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
                      
@@ -738,7 +747,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B4 
          */
-        if(Entry == Integer.parseInt(B4.getLabel()))
+        else if(Entry == Integer.parseInt(B4.getLabel()))
         {
             
             B4.setBackground(Color.darkGray); //It will change the color of the button
@@ -780,19 +789,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B4
@@ -801,7 +819,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B5 
          */
-        if(Entry == Integer.parseInt(B5.getLabel()))
+        else if(Entry == Integer.parseInt(B5.getLabel()))
         {
             
             B5.setBackground(Color.darkGray); //It will change the color of the button
@@ -856,19 +874,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B5
@@ -876,7 +903,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B6 
          */
-        if(Entry == Integer.parseInt(B6.getLabel()))
+        else if(Entry == Integer.parseInt(B6.getLabel()))
         {
             
             B6.setBackground(Color.darkGray); //It will change the color of the button
@@ -915,19 +942,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B6
@@ -935,7 +971,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B7 
          */
-        if(Entry == Integer.parseInt(B7.getLabel()))
+        else if(Entry == Integer.parseInt(B7.getLabel()))
         {
             
             B7.setBackground(Color.darkGray); //It will change the color of the button
@@ -988,19 +1024,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B7
@@ -1008,7 +1053,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B8 
          */
-        if(Entry == Integer.parseInt(B8.getLabel()))
+        else if(Entry == Integer.parseInt(B8.getLabel()))
         {
             
             B8.setBackground(Color.darkGray); //It will change the color of the button
@@ -1048,19 +1093,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-               
             }
                      
         }//end of if cobdtion for B8
@@ -1068,7 +1122,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B9 
          */
-        if(Entry == Integer.parseInt(B9.getLabel()))
+        else if(Entry == Integer.parseInt(B9.getLabel()))
         {
             
             B9.setBackground(Color.darkGray); //It will change the color of the button
@@ -1123,19 +1177,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B9
@@ -1143,7 +1206,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B10 
          */
-        if(Entry == Integer.parseInt(B10.getLabel()))
+        else if(Entry == Integer.parseInt(B10.getLabel()))
         {
             
             B10.setBackground(Color.darkGray); //It will change the color of the button
@@ -1183,19 +1246,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B10
@@ -1203,7 +1275,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B11 
          */
-        if(Entry == Integer.parseInt(B11.getLabel()))
+        else if(Entry == Integer.parseInt(B11.getLabel()))
         {
             
             B11.setBackground(Color.darkGray); //It will change the color of the button
@@ -1243,19 +1315,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B11
@@ -1264,7 +1345,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B12 
          */
-        if(Entry == Integer.parseInt(B12.getLabel()))
+        else if(Entry == Integer.parseInt(B12.getLabel()))
         {
             
             B12.setBackground(Color.darkGray); //It will change the color of the button
@@ -1304,19 +1385,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B12
@@ -1325,7 +1415,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B13 
          */
-        if(Entry == Integer.parseInt(B13.getLabel()))
+        else if(Entry == Integer.parseInt(B13.getLabel()))
         {
             
             B13.setBackground(Color.darkGray); //It will change the color of the button
@@ -1394,19 +1484,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B13
@@ -1415,7 +1514,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B14 
          */
-        if(Entry == Integer.parseInt(B14.getLabel()))
+        else if(Entry == Integer.parseInt(B14.getLabel()))
         {
             
             B14.setBackground(Color.darkGray); //It will change the color of the button
@@ -1455,19 +1554,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B14
@@ -1476,7 +1584,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B15 
          */
-        if(Entry == Integer.parseInt(B15.getLabel()))
+        else if(Entry == Integer.parseInt(B15.getLabel()))
         {
             
             B15.setBackground(Color.darkGray); //It will change the color of the button
@@ -1516,19 +1624,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B15
@@ -1537,7 +1654,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B16 
          */
-        if(Entry == Integer.parseInt(B16.getLabel()))
+        else if(Entry == Integer.parseInt(B16.getLabel()))
         {
             
             B16.setBackground(Color.darkGray); //It will change the color of the button
@@ -1577,19 +1694,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-               
             }
                      
         }//end of if cobdtion for B16
@@ -1598,7 +1724,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B17 
          */
-        if(Entry == Integer.parseInt(B17.getLabel()))
+        else if(Entry == Integer.parseInt(B17.getLabel()))
         {
             
             B17.setBackground(Color.darkGray); //It will change the color of the button
@@ -1652,21 +1778,30 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
             {
                 switch(BingoCount)
                 {
-                    case 1: BLabel.setText("B");
+                   case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B17
@@ -1675,7 +1810,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B18 
          */
-        if(Entry == Integer.parseInt(B18.getLabel()))
+        else if(Entry == Integer.parseInt(B18.getLabel()))
         {
             
             B18.setBackground(Color.darkGray); //It will change the color of the button
@@ -1714,19 +1849,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
             
                      
@@ -1736,7 +1880,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B19 
          */
-        if(Entry == Integer.parseInt(B19.getLabel()))
+        else if(Entry == Integer.parseInt(B19.getLabel()))
         {
             
             B19.setBackground(Color.darkGray); //It will change the color of the button
@@ -1789,18 +1933,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
-                
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
+                OLabel.setText("O");
             }
                      
         }//end of if cobdtion for B19
@@ -1810,7 +1964,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B20 
          */
-        if(Entry == Integer.parseInt(B20.getLabel()))
+        else if(Entry == Integer.parseInt(B20.getLabel()))
         {
             
             B20.setBackground(Color.darkGray); //It will change the color of the button
@@ -1850,19 +2004,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B20
@@ -1871,7 +2034,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B21 
          */
-        if(Entry == Integer.parseInt(B21.getLabel()))
+        else if(Entry == Integer.parseInt(B21.getLabel()))
         {
             
             B21.setBackground(Color.darkGray); //It will change the color of the button
@@ -1928,19 +2091,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-               
             }
                      
         }//end of if cobdtion for B21             
@@ -1949,7 +2121,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B22 
          */
-        if(Entry == Integer.parseInt(B22.getLabel()))
+        else if(Entry == Integer.parseInt(B22.getLabel()))
         {
             
             B22.setBackground(Color.darkGray); //It will change the color of the button
@@ -1989,19 +2161,27 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
-                        
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B22
@@ -2010,7 +2190,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B23 
          */
-        if(Entry == Integer.parseInt(B23.getLabel()))
+        else if(Entry == Integer.parseInt(B23.getLabel()))
         {
             
             B23.setBackground(Color.darkGray); //It will change the color of the button
@@ -2048,21 +2228,30 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
             {
                 switch(BingoCount)
                 {
-                    case 1: BLabel.setText("B");
+                   case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B23
@@ -2071,7 +2260,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B24 
          */
-        if(Entry == Integer.parseInt(B24.getLabel()))
+        else if(Entry == Integer.parseInt(B24.getLabel()))
         {
             
             B24.setBackground(Color.darkGray); //It will change the color of the button
@@ -2111,19 +2300,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+               BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B24
@@ -2132,7 +2330,7 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
         /**
          * Button B25 
          */
-        if(Entry == Integer.parseInt(B25.getLabel()))
+        else if(Entry == Integer.parseInt(B25.getLabel()))
         {
             
             B25.setBackground(Color.darkGray); //It will change the color of the button
@@ -2185,19 +2383,28 @@ public class ComputerBoardFrame extends javax.swing.JFrame {
                 {
                     case 1: BLabel.setText("B");
                     break;
-                    case 2: ILabel.setText("I");
+                    case 2: BLabel.setText("B");
+                            ILabel.setText("I");
                     break;
-                    case 3: NLabel.setText("N");
+                    case 3: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
                     break;
-                    case 4: GLabel.setText("G");
+                    case 4: BLabel.setText("B");
+                            ILabel.setText("I");
+                            NLabel.setText("N");
+                            GLabel.setText("G");           
                     break;
                         
                 }
             }
             else
             {
+                BLabel.setText("B");
+                ILabel.setText("I");
+                NLabel.setText("N");
+                GLabel.setText("G");
                 OLabel.setText("O");
-                
             }
                      
         }//end of if cobdtion for B25

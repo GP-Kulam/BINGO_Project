@@ -1223,16 +1223,6 @@ public class Computer {
     
     
     
-    public static void main(String[] args)
-    {
-       Computer c = new Computer();
-       
-       for(int i=0; i<25; i++)
-       {
-           c.giveRandom();
-       }
-       c.StoreValuesInarray();
-       c.display();
-    }
+   
     
 }
